@@ -66,7 +66,7 @@ app.get(
       const result = await db.select().from(todos);
       // logger console pinoHttp
       req.log.info({ result });
-      res.json(result);
+      res.status(200).json(result);
     } catch (error) {
       next(error);
     }
