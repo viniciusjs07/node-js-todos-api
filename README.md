@@ -12,6 +12,12 @@ Precisa instalar o grafana k6 para testar a api:
  Para rodar o k6 test:
  - Abrir o terminar powerShell no windows e navegar até a pasta services/api
  - Rodar: k6 run tests/load.js para rodar o script de teste da api
+ - npm run build
+ - node dist/index.js
+ - Rodar: k6 run --out cloud tests/load.js : Envia as métricas de 
+  testes para o site do grafana (Antes é preciso criar uma conta no site grafana cloud e gerar um token): https://grafana.com/docs/grafana-cloud/testing/k6/get-started/run-cloud-tests-from-the-cli/
+  - Após gerar o token rodar no diretório /api: k6 cloud login --token YOUR_TOKEN
+
 - Saída do teste:
        /\      |‾‾| /‾‾/   /‾‾/
      /\  /  \     |  |/  /   /  /
@@ -78,5 +84,6 @@ Ao criar uma tabela ou inserir nova coluna :
  - npm run db:migrate
  - npm run db:studio (para abrir a interface do drizzle e acessar as tabelas)
  - npm run db:seed inserir dados nas tabelas
+ - npm run build = Para rodar o build: node dist/index.js
 
 

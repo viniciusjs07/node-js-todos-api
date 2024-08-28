@@ -23,7 +23,9 @@ export default function () {
     isDone: true,
   });
 
-  const todos = http.get(`${BASE_URL}/api/v1/todos`, { params: { headers } });
+  const todos = http.get(`${BASE_URL}/api/v1/todos?limit=${5}`, {
+    params: { headers },
+  });
   check(todos, {
     "Get status is 200": (r) => r.status === 200,
   });

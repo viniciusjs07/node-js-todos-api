@@ -24,7 +24,7 @@ Content-Type: {{contentType}}
 }
 
 ###
-GET {{baseUrl}}/todos
+GET {{baseUrl}}/todos?limit=5
 Content-Type: {{contentType}}
 
 ###

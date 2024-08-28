@@ -63,7 +63,16 @@ app.get(
   "/api/v1/todos",
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const result = await db.select().from(todos);
+      const limit = Number(req.query.limit) ?? 10;
+      const result = await db
+        .select({
+          id: todos.id,
+          task: todos.task,
+          description: todos.description,
+          isDone: todos.isDone,
+        })
+        .from(todos)
+        .limit(limit >= 1 && limit <= 50 ? limit : 10);
       // logger console pinoHttp
       req.log.info({ result });
       res.status(200).json(result);
