@@ -22,6 +22,8 @@ const main = async () => {
     // Delete all data
     // await db.delete(todos);
 
+    console.log("counts ", counts[0].count);
+
     if (counts[0].count === 0) {
       // create 20 records
       const todoSeed = new Array(20).fill({}).map((e, i) => {

@@ -87,3 +87,14 @@ Ao criar uma tabela ou inserir nova coluna :
  - npm run build = Para rodar o build: node dist/index.js
 
 
+
+### Docker
+- arquivo Dockerfile contendo as configurações de dev e prod para a aplicação node.
+- Comandos:
+ - na pasta api/ : docker build --tag aws-ecs-fargate-nodejs-todo-app .
+ - Configurar docker-compose para subir a imagem da aplicação node no container
+ - comando: 
+   - docker-compode down
+   - docker compose up -d
+
+
